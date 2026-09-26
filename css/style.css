@@ -1,1 +1,399 @@
+/* ============================================================
+   Diko's Farm Grill and Restaurant - Sales Management System
+   Theme colors pulled from the restaurant logo:
+   Dark Green, Light Green, Gold/Yellow, Red accents, White
+   ============================================================ */
+
+:root {
+  --dark-green: #145a32;
+  --light-green: #5cb85c;
+  --gold: #f4b400;
+  --red: #c0392b;
+  --cream: #f7f3e9;
+  --white: #ffffff;
+  --shadow: 0 6px 18px rgba(20, 90, 50, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  background: var(--cream);
+  color: #2c2c2c;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* ---------- Login Pages ---------- */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dark-green), var(--light-green));
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card img.logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.login-card h3 {
+  color: var(--dark-green);
+  margin-bottom: 4px;
+}
+
+.login-card .subtitle {
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.btn-brand {
+  background: var(--dark-green);
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 0;
+  width: 100%;
+  transition: 0.2s;
+}
+.btn-brand:hover { background: var(--red); color: var(--white); }
+
+.btn-gold {
+  background: var(--gold);
+  border: none;
+  color: #2c2c2c;
+  font-weight: 600;
+  border-radius: 12px;
+}
+.btn-gold:hover { background: var(--red); color: var(--white); }
+
+.form-control:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25);
+}
+
+.login-links a { color: var(--dark-green); font-weight: 600; text-decoration: none; }
+.login-links a:hover { color: var(--red); }
+
+/* ---------- Password show/hide toggle ---------- */
+.password-wrapper { position: relative; }
+.password-wrapper input { padding-right: 42px !important; }
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  font-size: 15px;
+  user-select: none;
+}
+.password-toggle:hover { color: var(--dark-green); }
+
+/* ---------- App Shell (Dashboard layout) ---------- */
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 250px;
+  background: var(--dark-green);
+  color: var(--white);
+  padding: 20px 0;
+  flex-shrink: 0;
+}
+
+.sidebar .brand {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: 12px;
+}
+
+.sidebar .brand img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 4px;
+}
+
+.sidebar .brand h5 { color: var(--gold); margin: 8px 0 0; font-size: 15px; }
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.85);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+}
+
+.sidebar a:hover, .sidebar a.active {
+  background: rgba(255,255,255,0.08);
+  border-left: 4px solid var(--gold);
+  color: var(--white);
+}
+
+.main-content { flex: 1; padding: 28px; overflow-x: hidden; }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.topbar h2 { color: var(--dark-green); margin: 0; }
+
+/* ---------- Cards ---------- */
+.stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border-left: 6px solid var(--gold);
+  height: 100%;
+}
+.stat-card.red { border-left-color: var(--red); }
+.stat-card.green { border-left-color: var(--light-green); }
+.stat-card.dark { border-left-color: var(--dark-green); }
+
+.stat-card .label { color: #777; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+.stat-card .value { font-size: 26px; font-weight: 700; color: var(--dark-green); margin-top: 4px; }
+
+.card-brand {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: none;
+}
+
+/* ---------- Product Grid (New Order) ---------- */
+.product-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  border: 1px solid rgba(20, 90, 50, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(20, 90, 50, 0.18);
+}
+
+.product-card .img-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f1f1f1;
+  border-bottom: 3px solid var(--gold);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.product-card .body { padding: 12px; }
+.product-card .name { font-weight: 600; font-size: 14px; margin-bottom: 2px; color: #2c2c2c; min-height: 36px; }
+.product-card .price { color: var(--red); font-weight: 700; margin-bottom: 8px; }
+
+.badge-bestseller {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--gold);
+  color: #2c2c2c;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.badge-lowstock {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.qty-control { display: flex; align-items: center; gap: 8px; }
+.qty-control button {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--dark-green);
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1;
+}
+.qty-control button:hover { background: var(--red); }
+
+/* ---------- Cart ---------- */
+.cart-panel {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #ddd;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-top: 12px;
+}
+
+/* ---------- Tables ---------- */
+.table-brand thead { background: var(--dark-green); color: var(--white); }
+.table-brand td, .table-brand th { vertical-align: middle; }
+
+/* ---------- Receipt (80mm thermal style) ---------- */
+.receipt-80mm {
+  width: 300px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+.receipt-80mm img.logo { width: 60px; display: block; margin: 0 auto 6px; }
+.receipt-80mm h5 { text-align: center; margin: 0; font-size: 14px; }
+.receipt-80mm hr { border-top: 1px dashed #333; }
+.receipt-80mm .row-line { display: flex; justify-content: space-between; }
+
+@media print {
+  body * { visibility: hidden; }
+  .receipt-80mm, .receipt-80mm *,
+  .print-report, .print-report * { visibility: visible; }
+  .receipt-80mm { position: absolute; left: 0; top: 0; box-shadow: none; }
+  .print-report { display: block !important; position: absolute; left: 0; top: 0; width: 100%; }
+  .no-print { display: none !important; }
+}
+
+/* ---------- Printable Sales Report (letterhead style) ---------- */
+.print-report {
+  display: none;
+  padding: 20px 30px;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+.print-report .rpt-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 3px solid var(--dark-green);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+.print-report .rpt-header img { width: 64px; height: 64px; object-fit: contain; }
+.print-report .rpt-header h2 { margin: 0; color: var(--dark-green); font-size: 20px; }
+.print-report .rpt-header p { margin: 0; font-size: 12px; color: #444; }
+.print-report .rpt-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 10px 0 4px;
+  color: #000;
+}
+.print-report .rpt-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 14px;
+}
+.print-report table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.print-report th, .print-report td {
+  border: 1px solid #333;
+  padding: 6px 8px;
+  text-align: left;
+}
+.print-report th { background: #eee; }
+.print-report tfoot td { font-weight: 700; border-top: 2px solid #000; }
+.print-report .rpt-signatures {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  font-size: 12px;
+}
+.print-report .rpt-signatures .sig-block { width: 45%; text-align: center; }
+.print-report .rpt-signatures .sig-line { border-top: 1px solid #000; margin-top: 40px; padding-top: 4px; }
+
+/* ---------- Badges for best-seller ranking ---------- */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #2c2c2c;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.low-stock-row { background: #fdecea !important; }
+
+@media (max-width: 768px) {
+  .sidebar { position: fixed; left: -260px; z-index: 1000; height: 100%; transition: 0.3s; }
+  .sidebar.open { left: 0; }
+  .main-content { padding: 16px; }
+}
 
